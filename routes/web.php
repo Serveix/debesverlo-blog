@@ -15,7 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts/{id}', function() {
+Route::get('tags', 'TagController@index')->name('tags.index');
+Route::get('tag', 'TagController@create')->name('tags.create');
+Route::post('tag', 'TagController@store')->name('tags.store');
+Route::post('tag/{tag}', 'TagController@destroy')->name('tags.destroy');
+
+Route::get('post', 'PostController@create')->name('posts.create');
+
+Route::get('/posts/{post}', function() {
    return view('posts.show');
 });
 

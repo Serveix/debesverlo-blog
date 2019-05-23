@@ -32,8 +32,17 @@
                     <div class="header_top_left">
                         <ul class="top_nav">
                             <li><a href="/">Home</a></li>
+                            @auth
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorias</a>-
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ route('tags.create') }}">Crear nueva</a></li>
+                                        <li><a href="{{ route('tags.index') }}">Lista</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ route('posts.create') }}">Nuevo post</a></li>
 {{--                            <li><a href="#">About</a></li>--}}
 {{--                            <li><a href="pages/contact.html">Contact</a></li>--}}
+                            @endauth
                         </ul>
                     </div>
                     <div class="header_top_right">
@@ -67,14 +76,9 @@
                     <div class="footer_widget wow fadeInDown">
                         <h2>Tag</h2>
                         <ul class="tag_nav">
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Life &amp; Style</a></li>
-                            <li><a href="#">Technology</a></li>
-                            <li><a href="#">Photo</a></li>
-                            <li><a href="#">Slider</a></li>
+                            @foreach(App\Tag::all() as $tag)
+                                <li><a href="#">{{$tag->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -90,8 +94,10 @@
             </div>
         </div>
         <div class="footer_bottom">
-            <p class="copyright">Copyright &copy; 2045 <a href="index.html">NewsFeed</a></p>
-            <p class="developer">Developed By Wpfreeware</p>
+            <p class="copyright">Debes<b>Verlo</b>.com</p>
+            <p class="developer">
+                <a href="/login">Login</a>
+            </p>
         </div>
     </footer>
 </div>
