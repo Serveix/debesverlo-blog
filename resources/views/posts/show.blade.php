@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', $post->title)
 @section('content')
     <section id="newsSection">
         <div class="row">

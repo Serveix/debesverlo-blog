@@ -21,7 +21,7 @@ Route::post('tag', 'TagController@store')->name('tags.store');
 Route::post('tag/{tag}', 'TagController@destroy')->name('tags.destroy');
 
 Route::get('post', 'PostController@create')->name('posts.create');
-
+Route::post('post', 'PostController@store')->name('posts.store');
 Route::get('/posts/{post}', function() {
    return view('posts.show');
 });

@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create')->with('tags', Tag::all());
     }
 
     /**
@@ -40,20 +40,13 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|unique:posts|max:255',
             'body' => 'required',
-            'image' => 'mimes:jpeg,bmp,png',
+            'image' => 'required|mimes:jpeg,bmp,png',
             'video_url' => 'max:190',
             'published' => 'required|boolean',
             'tag' => 'required'
         ]);
 
-        $tag = Tag::where('name', $request->input('tag'))->first();
-
-        if(!$tag)
-        {
-            $tag = new Tag;
-            $tag->name = $request->input('tag');
-            $tag->save();
-        }
+        $tag = Tag::find($request->input('tag'));
 
         $post = new Post;
         $post->title = $request->input('title');

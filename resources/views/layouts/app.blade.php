@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NewsFeed</title>
+    <title>DebesVerlo: @yield('title')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.fancybox.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/theme.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+    @yield('styles')
     <!--[if lt IE 9]>
     <script src="{{ asset('assets/js/html5shiv.min.js') }}"></script>
     <script src="{{ asset('assets/js/respond.min.js') }}"></script>
@@ -109,6 +110,7 @@
 <script src="{{ asset('assets/js/jquery.newsTicker.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.fancybox.pack.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+@yield('scripts')
 </body>
 </html>
 
