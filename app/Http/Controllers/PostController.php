@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -24,7 +26,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create')->with('tags', Tag::all());
     }
 
     /**
@@ -35,7 +37,31 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'description' => 'required|max:190',
+            'body' => 'required',
+            'image' => 'required|mimes:jpeg,bmp,png',
+            'video_url' => 'max:190',
+            'published' => 'required|boolean',
+            'tag' => 'required'
+        ]);
+
+        $tag = Tag::find($request->input('tag'));
+
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+        $post->content = $request->input('body');
+        $post->image_path = $request->image->store('images', 'public');
+        $post->video_url = $request->input('image');
+        $post->published = $request->input('published');
+        $post->user()->associate(Auth::user());
+        $post->save();
+
+        $post->tags()->attach($tag);
+
+        return back()->with('success-new', 'Post creado con éxito.');
     }
 
     /**
@@ -46,7 +72,11 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $sliderPosts = Post::latest()->limit(4)->get();
+
+        return view('posts.show')
+            ->with('post', $post)
+            ->with('sliderPosts', $sliderPosts);
     }
 
     /**

@@ -4,8 +4,11 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav main_nav">
-            <li class="active"><a href="index.html"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
-            <li><a href="#">Peliculas</a></li>
+            <li class="active"><a href="/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
+            @foreach(App\Tag::all() as $tag)
+                <li><a href="#">{{ $tag->name }}</a></li>
+            @endforeach
+
 {{--            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mobile</a>--}}
 {{--                <ul class="dropdown-menu" role="menu">--}}
 {{--                    <li><a href="#">Android</a></li>--}}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NewsFeed</title>
+    <title>DebesVerlo: @yield('title')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.fancybox.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/theme.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+    @yield('styles')
     <!--[if lt IE 9]>
     <script src="{{ asset('assets/js/html5shiv.min.js') }}"></script>
     <script src="{{ asset('assets/js/respond.min.js') }}"></script>
@@ -32,8 +33,17 @@
                     <div class="header_top_left">
                         <ul class="top_nav">
                             <li><a href="/">Home</a></li>
+                            @auth
+                                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorias</a>-
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ route('tags.create') }}">Crear nueva</a></li>
+                                        <li><a href="{{ route('tags.index') }}">Lista</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ route('posts.create') }}">Nuevo post</a></li>
 {{--                            <li><a href="#">About</a></li>--}}
 {{--                            <li><a href="pages/contact.html">Contact</a></li>--}}
+                            @endauth
                         </ul>
                     </div>
                     <div class="header_top_right">
@@ -53,6 +63,8 @@
         @include('includes.navbar')
     </section>
 
+    @include('includes.news_section')
+
     @yield('content')
 
     <footer id="footer">
@@ -67,14 +79,9 @@
                     <div class="footer_widget wow fadeInDown">
                         <h2>Tag</h2>
                         <ul class="tag_nav">
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Life &amp; Style</a></li>
-                            <li><a href="#">Technology</a></li>
-                            <li><a href="#">Photo</a></li>
-                            <li><a href="#">Slider</a></li>
+                            @foreach(App\Tag::all() as $tag)
+                                <li><a href="#">{{$tag->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -90,8 +97,10 @@
             </div>
         </div>
         <div class="footer_bottom">
-            <p class="copyright">Copyright &copy; 2045 <a href="index.html">NewsFeed</a></p>
-            <p class="developer">Developed By Wpfreeware</p>
+            <p class="copyright">Debes<b>Verlo</b>.com</p>
+            <p class="developer">
+                <a href="/login">Login</a>
+            </p>
         </div>
     </footer>
 </div>
@@ -103,6 +112,13 @@
 <script src="{{ asset('assets/js/jquery.newsTicker.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.fancybox.pack.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+<!-- Main Quill library -->
+{{--    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>--}}
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+
+@yield('scripts')
 </body>
 </html>
 
