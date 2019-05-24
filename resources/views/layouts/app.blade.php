@@ -63,6 +63,8 @@
         @include('includes.navbar')
     </section>
 
+    @include('includes.news_section')
+
     @yield('content')
 
     <footer id="footer">
@@ -110,6 +112,12 @@
 <script src="{{ asset('assets/js/jquery.newsTicker.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.fancybox.pack.js') }}"></script>
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+<!-- Main Quill library -->
+{{--    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>--}}
+<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+
 @yield('scripts')
 </body>
 </html>

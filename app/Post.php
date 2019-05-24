@@ -11,7 +11,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'content', 'image_path', 'video_url', 'published'];
+    protected $fillable = ['title', 'description', 'content', 'image_path', 'video_url', 'published'];
 
     /**
      * The attributes that should be cast to native types.

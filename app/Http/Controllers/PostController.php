@@ -39,6 +39,7 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|unique:posts|max:255',
+            'description' => 'required|max:190',
             'body' => 'required',
             'image' => 'required|mimes:jpeg,bmp,png',
             'video_url' => 'max:190',
@@ -50,12 +51,17 @@ class PostController extends Controller
 
         $post = new Post;
         $post->title = $request->input('title');
+        $post->description = $request->input('description');
         $post->content = $request->input('body');
         $post->image_path = $request->image->store('images', 'public');
         $post->video_url = $request->input('image');
         $post->published = $request->input('published');
-        $post->tags()->attach($tag);
         $post->user()->associate(Auth::user());
+        $post->save();
+
+        $post->tags()->attach($tag);
+
+        return back()->with('success-new', 'Post creado con éxito.');
     }
 
     /**
@@ -66,7 +72,11 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show')->with('post', $post);
+        $sliderPosts = Post::latest()->limit(4)->get();
+
+        return view('posts.show')
+            ->with('post', $post)
+            ->with('sliderPosts', $sliderPosts);
     }
 
     /**

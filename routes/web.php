@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontController@welcome');
 
 Route::get('tags', 'TagController@index')->name('tags.index');
 Route::get('tag', 'TagController@create')->name('tags.create');
@@ -22,9 +20,7 @@ Route::post('tag/{tag}', 'TagController@destroy')->name('tags.destroy');
 
 Route::get('post', 'PostController@create')->name('posts.create');
 Route::post('post', 'PostController@store')->name('posts.store');
-Route::get('/posts/{post}', function() {
-   return view('posts.show');
-});
+Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
 
 Auth::routes();
 

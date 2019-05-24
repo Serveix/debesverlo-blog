@@ -7,11 +7,18 @@
     <section id="contentSection">
         <div class="row">
             <div class="col-md-12">
+
+                @if(session('success-new'))
+                    <div class="alert alert-success">
+                        {{ session('success-new') }}
+                    </div>
+                @endif
+
                 <form enctype="multipart/form-data" id="new-post-form" action="{{ route('posts.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="">Titulo *</label>
-                        <input type="text" class="form-control" name="title">
+                        <input type="text" class="form-control" name="title" value="{{ old('title') }}">
 
                         @error('title')
                         <span class="invalid-feedback" style="color: darkred" role="alert">
@@ -21,8 +28,19 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="">Descripci&oacute;n *</label>
+                        <textarea class="form-control" name="description">{{ old('description') }}</textarea>
+
+                        @error('description')
+                        <span class="invalid-feedback" style="color: darkred" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <label for="video-url">URL de Video:</label>
-                        <input type="text" class="form-control" name="video_url">
+                        <input type="text" class="form-control" name="video_url" value="{{ old('video_url') }}">
 
                         @error('video_url')
                         <span class="invalid-feedback" style="color: darkred" role="alert">
@@ -44,9 +62,9 @@
 
                     <div class="form-group">
                         <label for="tags">Categoria *</label>
-                        <select name="tag" id="tags" class="form-control">
+                        <select name="tag" id="tags" class="catgArchive">
                             @foreach($tags as $tag)
-                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                <option @if(old('tag') == $tag->id) selected @endif value="{{ $tag->id }}">{{ $tag->name }}</option>
                             @endforeach
                         </select>
 
@@ -56,6 +74,19 @@
                         </span>
                         @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label for="published">Visibilidad:</label> <br>
+                        <input type="radio" name="published" value="1" checked> Publicado<br>
+                        <input type="radio" name="published" value="0" > Oculto<br>
+
+                        @error('published')
+                        <span class="invalid-feedback" style="color: darkred" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
 
                     <div class="form-group">
                         <label for="">Cuerpo *</label>
@@ -80,9 +111,6 @@
 @endsection
 
 @section('scripts')
-    <!-- Main Quill library -->
-{{--    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>--}}
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
     <script>
         let quill = new Quill('#editor', {
@@ -91,15 +119,14 @@
 
         $("#new-post-form").on("submit", () => {
             // $("#hiddenArea").val($("#quillArea").html());
-            $('#hiddenArea').val( quill.getContents() )
+            $('#hiddenArea').val( JSON.stringify(quill.getContents()) )
             console.log('appended !')
         })
 
-        // function quillGetHTML(inputDelta) {
-        //     var tempQuill=new Quill(document.createElement("div"));
-        //     tempQuill.setContents(inputDelta);
-        //     return tempQuill.root.innerHTML;
-        // }
+        @if(!empty(old('body')))
+        quill.setContents({!! old('body') !!})
+        @endif
+
 
     </script>
 @endsection
