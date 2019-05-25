@@ -34,6 +34,7 @@
             <div class="col-lg-8 col-md-8 col-sm-8">
                 <div class="left_content">
                     <div class="single_post_content">
+                        @if($tags != null)
                         <h2><span>{{ $tags->first()->name }}</span></h2>
                         <div class="single_post_content_left">
                             <ul class="business_catgnav  wow fadeInDown">
@@ -55,6 +56,7 @@
                                 </li>
                             </ul>
                         </div>
+                        @endif
                         <div class="single_post_content_right">
                             <ul class="spost_nav">
                                 <li>
