@@ -7,7 +7,7 @@
                     @foreach($sliderPosts as $sp)
                     <div class="single_iteam">
                         <a href="{{ route('posts.show', ['post' => $sp->id]) }}">
-                            <img src="{{ asset('storage/'.$sp->image_path) }}" alt="">
+                            <img src="{{ secure_asset('storage/'.$sp->image_path) }}" alt="">
                         </a>
                         <div class="slider_article">
                             <h2>
@@ -41,7 +41,7 @@
                                 <li>
                                     <figure class="bsbig_fig">
                                         <a href="pages/single_page.html" class="featured_img">
-                                            <img alt="" src="{{ asset('storage/'.$tags->first()->posts->first()->image_path) }}">
+                                            <img alt="" src="{{ secure_asset('storage/'.$tags->first()->posts->first()->image_path) }}">
                                             <span class="overlay"></span>
                                         </a>
                                         <figcaption>
@@ -235,9 +235,19 @@
                         </div>
                     </div>
                     <div class="single_sidebar wow fadeInDown">
-                        <h2><span>Sponsor</span></h2>
+                        <h2><span>De inter&eacute;s</span></h2>
 
-                        {{--TODO: GOOGLE ADSENSE--}}
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- top bar -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1381053474060693"
+                            data-ad-slot="4882257137"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
 
                     </div>
 
