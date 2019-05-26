@@ -7,7 +7,7 @@
                     @foreach($sliderPosts as $sp)
                     <div class="single_iteam">
                         <a href="{{ route('posts.show', ['post' => $sp->id]) }}">
-                            <img src="{{ asset('storage/'.$sp->image_path) }}" alt="">
+                            <img src="{{ secure_asset('storage/'.$sp->image_path) }}" alt="">
                         </a>
                         <div class="slider_article">
                             <h2>
@@ -41,7 +41,7 @@
                                 <li>
                                     <figure class="bsbig_fig">
                                         <a href="pages/single_page.html" class="featured_img">
-                                            <img alt="" src="{{ asset('storage/'.$tags->first()->posts->first()->image_path) }}">
+                                            <img alt="" src="{{ secure_asset('storage/'.$tags->first()->posts->first()->image_path) }}">
                                             <span class="overlay"></span>
                                         </a>
                                         <figcaption>
