@@ -57,8 +57,20 @@
                 <aside class="right_content">
                     @include('includes.recent_posts')
                     <div class="single_sidebar wow fadeInDown">
-                        <h2><span>Sponsor</span></h2>
-                        <a class="sideAdd" href="#"><img src="../../public/images/add_img.jpg" alt=""></a> </div>
+                        <h2><span>De inter&eacute;s</span></h2>
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- top bar -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1381053474060693"
+                            data-ad-slot="4882257137"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+
+                    </div>
 
                 </aside>
             </div>

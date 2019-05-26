@@ -19,6 +19,16 @@
     <script src="{{ asset('assets/js/html5shiv.min.js') }}"></script>
     <script src="{{ asset('assets/js/respond.min.js') }}"></script>
     <![endif]-->
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-1381053474060693",
+          enable_page_level_ads: true
+     });
+</script>
+
+
 </head>
 <body>
 <div id="preloader">
@@ -54,7 +64,19 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="header_bottom">
                     <div class="logo_area"><a href="/" class="logo"><img src="{{ asset('images/logo.jpg') }}" alt=""></a></div>
-                    <div class="add_banner"><a href="#"><img src="{{ asset('images/addbanner_728x90_V1.jpg') }}" alt=""></a></div>
+                    <div class="add_banner">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- top bar -->
+                    <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-1381053474060693"
+                        data-ad-slot="4882257137"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    </div>
                 </div>
             </div>
         </div>
