@@ -114,10 +114,7 @@
         </div>
     </footer>
 </div>
-<script>
-    document.addEventListener('touchstart', onTouchStart, {passive: true});
-</script>
-<script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="{{ secure_asset('assets/js/wow.min.js') }}"></script>
 <script src="{{ secure_asset('assets/js/bootstrap.min.js') }}"></script>
 <script src="{{ secure_asset('assets/js/slick.min.js') }}"></script>
