@@ -45,6 +45,7 @@
                 </div>
             </div>
             <nav class="nav-slit">
+                @if($previousPost)
                 <a class="prev" href="#">
                     <span class="icon-wrap">
                         <i class="fa fa-angle-left"></i>
@@ -54,11 +55,14 @@
                         <img src="{{ asset('storage/' . $previousPost->image_path) }}" alt="{{ $previousPost->description }}"/>
                     </div>
                 </a>
+                @endif
+                @if($nextPost)
                 <a class="next" href="#"> <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
                     <div>
                         <h3>{{ $nextPost->title }}</h3>
                         <img src="{{ asset('storage/' . $nextPost->image_path) }}" alt="{{ $nextPost->description }}"/> </div>
                 </a>
+                @endif
             </nav>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <aside class="right_content">
