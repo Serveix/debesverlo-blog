@@ -35,7 +35,7 @@
                     </span>
                     <div>
                         <h3>{{ $previousPost->title }}</h3>
-                        <img src="{{ asset('storage/' . $previousPost->image_path) }}" alt="{{ $previousPost->description }}"/>
+                        <img src="{{ secure_asset('storage/' . $previousPost->image_path) }}" alt="{{ $previousPost->description }}"/>
                     </div>
                 </a>
                 @endif
@@ -44,7 +44,7 @@
                     <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
                     <div>
                         <h3>{{ $nextPost->title }}</h3>
-                        <img src="{{ asset('storage/' . $nextPost->image_path) }}" alt="{{ $nextPost->description }}"/> </div>
+                        <img src="{{ secure_asset('storage/' . $nextPost->image_path) }}" alt="{{ $nextPost->description }}"/> </div>
                 </a>
                 @endif
             </nav>
