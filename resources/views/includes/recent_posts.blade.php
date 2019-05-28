@@ -8,7 +8,7 @@
                 <li>
                     <div class="media">
                         <a href="{{ route('posts.show', ['post' => $sp->id]) }}" class="media-left">
-                            <img alt="" src="{{ secure_asset('storage/' . $sp->image_path) }}">
+                            <img alt="" src="{{ asset('storage/' . $sp->image_path) }}">
                         </a>
                         <div class="media-body">
                             <a href="{{ route('posts.show', ['post' => $sp->id]) }}" class="catg_title">

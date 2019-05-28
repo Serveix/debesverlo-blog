@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/font.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/li-scroller.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/jquery.fancybox.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/theme.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/li-scroller.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.fancybox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
     @yield('styles')
     <!--[if lt IE 9]>
-    <script src="{{ secure_asset('assets/js/html5shiv.min.js') }}"></script>
-    <script src="{{ secure_asset('assets/js/respond.min.js') }}"></script>
+    <script src="{{ asset('assets/js/html5shiv.min.js') }}"></script>
+    <script src="{{ asset('assets/js/respond.min.js') }}"></script>
     <![endif]-->
 
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -63,7 +63,7 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="header_bottom">
-                    <div class="logo_area"><a href="/" class="logo"><img src="{{ secure_asset('images/logo.jpg') }}" alt=""></a></div>
+                    <div class="logo_area"><a href="/" class="logo"><img src="{{ asset('images/logodebesverlo.png') }}" alt=""></a></div>
                     <div class="add_banner">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- top bar -->
@@ -91,32 +91,16 @@
 
     <footer id="footer">
         <div class="footer_top">
+
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="footer_widget wow fadeInLeftBig">
-                        <h2>Flickr Images</h2>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="footer_widget wow fadeInDown">
-                        <h2>Tag</h2>
-                        <ul class="tag_nav">
-                            @foreach(App\Tag::all() as $tag)
-                                <li><a href="#">{{$tag->name}}</a></li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="footer_widget wow fadeInRightBig">
-                        <h2>Contact</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <address>
-                            Perfect News,1238 S . 123 St.Suite 25 Town City 3333,USA Phone: 123-326-789 Fax: 123-546-567
-                        </address>
-                    </div>
-                </div>
+
+                {{--<div class="col-md-8 col-md-offset-2 text-center">--}}
+                    {{--<h1>&iexcl;Suscribete!</h1>--}}
+                    {{--<input type="text" class="form-control">--}}
+                {{--</div>--}}
+
             </div>
+
         </div>
         <div class="footer_bottom">
             <p class="copyright">Debes<b>Verlo</b>.com</p>
@@ -126,14 +110,14 @@
         </div>
     </footer>
 </div>
-<script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/wow.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/slick.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/jquery.li-scroller.1.0.js') }}"></script>
-<script src="{{ secure_asset('assets/js/jquery.newsTicker.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/jquery.fancybox.pack.js') }}"></script>
-<script src="{{ secure_asset('assets/js/custom.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/wow.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.li-scroller.1.0.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.newsTicker.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.fancybox.pack.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
 
 <!-- Main Quill library -->
 {{--    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>--}}
@@ -156,14 +140,14 @@
 {{--    <title>{{ config('app.name', 'Laravel') }}</title>--}}
 
 {{--    <!-- Scripts -->--}}
-{{--    <script src="{{ secure_asset('js/app.js') }}" defer></script>--}}
+{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
 
 {{--    <!-- Fonts -->--}}
 {{--    <link rel="dns-prefetch" href="//fonts.gstatic.com">--}}
 {{--    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">--}}
 
 {{--    <!-- Styles -->--}}
-{{--    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">--}}
+{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
 {{--</head>--}}
 {{--<body>--}}
 {{--    <div id="app">--}}
