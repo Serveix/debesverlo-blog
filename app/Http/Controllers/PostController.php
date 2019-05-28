@@ -76,8 +76,8 @@ class PostController extends Controller
 
         return view('posts.show')
             ->with('post', $post)
-            ->with('previousPost', Post::find($post->id - 1))
-            ->with('nextPost', Post::find($post->id + 1))
+            ->with('previousPost', Post::where('id', '<', $post->id)->max('id'))
+            ->with('nextPost', Post::where('id', '>', $post->id)->max('id'))
             ->with('sliderPosts', $sliderPosts);
     }
 
