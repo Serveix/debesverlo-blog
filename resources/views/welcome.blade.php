@@ -8,7 +8,7 @@
                     @foreach($sliderPosts as $sp)
                     <div class="single_iteam">
                         <a href="{{ route('posts.show', ['post' => $sp->id]) }}">
-                            <img src="{{ secure_asset('storage/'.$sp->image_path) }}" alt="">
+                            <img src="{{ secure_asset('storage/'.$sp->image_path) }}" alt="{{ $sp->title }}">
                         </a>
                         <div class="slider_article">
                             <h2>

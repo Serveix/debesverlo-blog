@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class FrontController extends Controller
 {
     public function welcome() {
+        setlocale(LC_ALL,"es_MX");
         $sliderPosts = Post::latest()->limit(4)->get();
 
         return view('welcome')
