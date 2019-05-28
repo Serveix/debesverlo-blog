@@ -37,8 +37,9 @@
     <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
     <div class="container">
         <header id="header">
-            @auth
+
             <div class="row">
+                @auth
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="header_top">
                         <div class="header_top_left">
