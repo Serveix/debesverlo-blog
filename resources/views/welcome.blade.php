@@ -39,8 +39,10 @@
                         <h2><span>{{ $tags->first()->name }}</span></h2>
                         <div class="single_post_content_left">
                             <ul class="business_catgnav  wow fadeInDown">
+                                @php $latestPost = $tags->first()->posts()->latest()->first();  @endphp
+                                @if($latestPost)
                                 <li>
-                                    @php $latestPost = $tags->first()->posts()->latest()->first();  @endphp
+
                                     <figure class="bsbig_fig">
                                         <a href="pages/single_page.html" class="featured_img">
                                             <img alt="" src="{{ asset('storage/'.$latestPost->image_path) }}">
@@ -56,6 +58,7 @@
                                         </p>
                                     </figure>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                         @endif
@@ -84,8 +87,9 @@
                                 @php $secondTag = $tags->slice(1)->first(); @endphp
                                 <h2><span>{{ $secondTag->name }}</span></h2>
                                 <ul class="business_catgnav wow fadeInDown">
+                                    @php $secTagLatestPost = $secondTag->posts()->latest()->first();  @endphp
+                                    @if($secTagLatestPost)
                                     <li>
-                                        @php $secTagLatestPost = $secondTag->posts()->latest()->first();  @endphp
                                         <figure class="bsbig_fig">
                                             <a href="{{ route('posts.show', ['post' => $secTagLatestPost]) }}" class="featured_img">
                                                 <img alt="{{ $secTagLatestPost->title }}"
@@ -102,6 +106,7 @@
                                             </p>
                                         </figure>
                                     </li>
+                                    @endif
                                 </ul>
                                 <ul class="spost_nav">
                                     @foreach($secondTag->posts()->offset(1)->limit(5)->latest()->get() as $post)
