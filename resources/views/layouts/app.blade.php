@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/style.css') }}">
 
     @yield('styles')
-    
+
     <!--[if lt IE 9]>
     <script src="{{ secure_asset('assets/js/html5shiv.min.js') }}"></script>
     <script src="{{ secure_asset('assets/js/respond.min.js') }}"></script>
@@ -80,10 +80,15 @@
             </div>
         </header>
     <section id="navArea">
+
         @include('includes.navbar')
+
     </section>
+
     @include('includes.news_section')
+
     @yield('content')
+
     <footer id="footer">
         <div class="footer_top"></div>
         <div class="footer_bottom">
@@ -103,6 +108,8 @@
     <script src="{{ secure_asset('assets/js/jquery.fancybox.pack.js') }}"></script>
     <script src="{{ secure_asset('assets/js/custom.js') }}"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
     @yield('scripts')
+
 </body>
 </html>

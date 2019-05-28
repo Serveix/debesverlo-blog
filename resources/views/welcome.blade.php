@@ -172,71 +172,10 @@
                             </div>
                         </div>
                     </div>
-                    {{--<div class="single_post_content">--}}
-                        {{--<h2><span>Photography</span></h2>--}}
-                        {{--<ul class="photograph_nav  wow fadeInDown">--}}
-                            {{--<li>--}}
-                                {{--<div class="photo_grid">--}}
-                                    {{--<figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img2.jpg" title="Photography Ttile 1"> <img src="images/photograph_img2.jpg" alt=""/></a> </figure>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<div class="photo_grid">--}}
-                                    {{--<figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img3.jpg" title="Photography Ttile 2"> <img src="images/photograph_img3.jpg" alt=""/> </a> </figure>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<div class="photo_grid">--}}
-                                    {{--<figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img4.jpg" title="Photography Ttile 3"> <img src="images/photograph_img4.jpg" alt=""/> </a> </figure>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<div class="photo_grid">--}}
-                                    {{--<figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img4.jpg" title="Photography Ttile 4"> <img src="images/photograph_img4.jpg" alt=""/> </a> </figure>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<div class="photo_grid">--}}
-                                    {{--<figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img2.jpg" title="Photography Ttile 5"> <img src="images/photograph_img2.jpg" alt=""/> </a> </figure>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<div class="photo_grid">--}}
-                                    {{--<figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="images/photograph_img3.jpg" title="Photography Ttile 6"> <img src="images/photograph_img3.jpg" alt=""/> </a> </figure>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                    {{----}}
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <aside class="right_content">
-                    {{--<div class="single_sidebar">--}}
-                        {{--<h2><span>Popular Post</span></h2>--}}
-                        {{--<ul class="spost_nav">--}}
-                            {{--<li>--}}
-                                {{--<div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>--}}
-                                    {{--<div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>--}}
-                                    {{--<div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>--}}
-                                    {{--<div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                            {{--<li>--}}
-                                {{--<div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>--}}
-                                    {{--<div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>--}}
-                                {{--</div>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
                     <div class="single_sidebar">
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#category" aria-controls="home" role="tab" data-toggle="tab">Categorias</a></li>
@@ -254,7 +193,6 @@
                     </div>
                     <div class="single_sidebar wow fadeInDown">
                         <h2><span>De inter&eacute;s</span></h2>
-
                         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                         <!-- top bar -->
                         <ins class="adsbygoogle"
@@ -266,10 +204,7 @@
                         <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
-
                     </div>
-
-
                 </aside>
             </div>
         </div>
