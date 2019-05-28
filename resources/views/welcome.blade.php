@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Inicio')
 @section('content')
     <section id="sliderSection">
         <div class="row">
@@ -7,7 +8,7 @@
                     @foreach($sliderPosts as $sp)
                     <div class="single_iteam">
                         <a href="{{ route('posts.show', ['post' => $sp->id]) }}">
-                            <img src="{{ secure_asset('storage/'.$sp->image_path) }}" alt="">
+                            <img src="{{ asset('storage/'.$sp->image_path) }}" alt="">
                         </a>
                         <div class="slider_article">
                             <h2>
@@ -39,18 +40,19 @@
                         <div class="single_post_content_left">
                             <ul class="business_catgnav  wow fadeInDown">
                                 <li>
+                                    @php $latestPost = $tags->first()->posts()->latest()->first();  @endphp
                                     <figure class="bsbig_fig">
                                         <a href="pages/single_page.html" class="featured_img">
-                                            <img alt="" src="{{ secure_asset('storage/'.$tags->first()->posts->first()->image_path) }}">
+                                            <img alt="" src="{{ asset('storage/'.$latestPost->image_path) }}">
                                             <span class="overlay"></span>
                                         </a>
                                         <figcaption>
-                                            <a href="{{ route('posts.show', ['post' => $tags->first()->posts->first()->id ]) }}">
-                                                {{ $tags->first()->posts->first()->title }}
+                                            <a href="{{ route('posts.show', ['post' => $latestPost->id ]) }}">
+                                                {{ $latestPost->title }}
                                             </a>
                                         </figcaption>
                                         <p>
-                                            {{ $tags->first()->posts->first()->description }}
+                                            {{ $latestPost->description }}
                                         </p>
                                     </figure>
                                 </li>
@@ -59,97 +61,108 @@
                         @endif
                         <div class="single_post_content_right">
                             <ul class="spost_nav">
+                                @foreach($tags->first()->posts()->offset(1)->limit(5)->latest()->get() as $post)
                                 <li>
-                                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                                    <div class="media wow fadeInDown">
+                                        <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="media-left">
+                                            <img alt="" src="{{ asset('storage/' . $post->image_path) }}">
+                                        </a>
+                                        <div class="media-body">
+                                            <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="catg_title">
+                                                {{ $post->title }}
+                                            </a>
+                                        </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                                        <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                     <div class="fashion_technology_area">
                         <div class="fashion">
                             <div class="single_post_content">
-                                <h2><span>Fashion</span></h2>
+                                @php $secondTag = $tags->slice(1)->first(); @endphp
+                                <h2><span>{{ $secondTag->name }}</span></h2>
                                 <ul class="business_catgnav wow fadeInDown">
                                     <li>
-                                        <figure class="bsbig_fig"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="images/featured_img2.jpg"> <span class="overlay"></span> </a>
-                                            <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat nisl eu ornare mauris</a> </figcaption>
-                                            <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...</p>
+                                        @php $secTagLatestPost = $secondTag->posts()->latest()->first();  @endphp
+                                        <figure class="bsbig_fig">
+                                            <a href="{{ route('posts.show', ['post' => $secTagLatestPost]) }}" class="featured_img">
+                                                <img alt="{{ $secTagLatestPost->title }}"
+                                                     src="{{ asset('storage/' . $secTagLatestPost->image_path) }}">
+                                                <span class="overlay"></span>
+                                            </a>
+                                            <figcaption>
+                                                <a href="{{ route('posts.show', ['post' => $secTagLatestPost]) }}">
+                                                   {{ $secTagLatestPost->title }}
+                                                </a>
+                                            </figcaption>
+                                            <p>
+                                                {{ $secTagLatestPost->description }}
+                                            </p>
                                         </figure>
                                     </li>
                                 </ul>
                                 <ul class="spost_nav">
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                                        </div>
-                                    </li>
+                                    @foreach($secondTag->posts()->offset(1)->limit(5)->latest()->get() as $post)
+                                        <li>
+                                            <div class="media wow fadeInDown">
+                                                <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="media-left">
+                                                    <img alt="{{ $post->title }}"
+                                                         src="{{ asset('storage/' . $post->image_path ) }}">
+                                                </a>
+                                                <div class="media-body">
+                                                    <a href="{{ route('posts.show', ['posts' => $post->id]) }}" class="catg_title">
+                                                        {{ $post->description }}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
                         <div class="technology">
                             <div class="single_post_content">
-                                <h2><span>Technology</span></h2>
+                                @php $thirdTag = $tags->slice(2)->first(); @endphp
+                                <h2><span>{{ $thirdTag->name }}</span></h2>
                                 <ul class="business_catgnav">
+                                    @php $thirdTagLatestPost = $thirdTag->posts()->latest()->first();  @endphp
+                                    @if($thirdTagLatestPost)
                                     <li>
-                                        <figure class="bsbig_fig wow fadeInDown"> <a href="pages/single_page.html" class="featured_img"> <img alt="" src="images/featured_img3.jpg"> <span class="overlay"></span> </a>
-                                            <figcaption> <a href="pages/single_page.html">Proin rhoncus consequat nisl eu ornare mauris</a> </figcaption>
-                                            <p>Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imperdiet nulla nisl quis mauris. Suspendisse a phare...</p>
+                                        <figure class="bsbig_fig wow fadeInDown">
+                                            <a href="" class="featured_img">
+                                                <img alt="{{ $thirdTagLatestPost->title }}"
+                                                     src="{{ asset('storage/' . $thirdTagLatestPost->image_path) }}">
+                                                <span class="overlay"></span>
+                                            </a>
+                                            <figcaption>
+                                                <a href="{{ route('posts.show', ['post' => $thirdTagLatestPost->id]) }}">
+                                                    {{ $thirdTagLatestPost->title }}
+                                                </a>
+                                            </figcaption>
+                                            <p>
+                                                {{ $thirdTagLatestPost->description }}
+                                            </p>
                                         </figure>
                                     </li>
+                                    @endif
                                 </ul>
                                 <ul class="spost_nav">
+                                    @foreach($thirdTag->posts()->offset(1)->limit(5)->latest()->get() as $post)
                                     <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                                        <div class="media wow fadeInDown">
+                                            <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="media-left">
+                                                <img alt="{{ $post->title }}" src="{{ asset('storage/' . $post->image_path) }}">
+                                            </a>
+                                            <div class="media-body">
+                                                <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="catg_title">
+                                                    {{ $post->description }}
+                                                </a>
+                                            </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img2.jpg"> </a>
-                                            <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
