@@ -45,7 +45,7 @@
                 </div>
             </div>
             <nav class="nav-slit">
-                @if($previousPost)
+                @if($previousPost != null)
                 <a class="prev" href="#">
                     <span class="icon-wrap">
                         <i class="fa fa-angle-left"></i>
@@ -56,7 +56,7 @@
                     </div>
                 </a>
                 @endif
-                @if($nextPost)
+                @if($nextPost != null)
                 <a class="next" href="#"> <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
                     <div>
                         <h3>{{ $nextPost->title }}</h3>
