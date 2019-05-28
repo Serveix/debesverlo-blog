@@ -12,7 +12,7 @@
                         </a>
                         <div class="slider_article">
                             <h2>
-                                <a class="slider_tittle" href="pages/single_page.html">
+                                <a class="slider_tittle" href="{{ route('posts.show', ['posts'=> $sp->id]) }}">
                                     {{ $sp->title }}
                                 </a>
                             </h2>
@@ -44,7 +44,7 @@
                                 <li>
 
                                     <figure class="bsbig_fig">
-                                        <a href="pages/single_page.html" class="featured_img">
+                                        <a href="{{ route('posts.show', ['posts'=> $latestPost->id]) }}" class="featured_img">
                                             <img alt="" src="{{ secure_asset('storage/'.$latestPost->image_path) }}">
                                             <span class="overlay"></span>
                                         </a>
@@ -136,7 +136,7 @@
                                     @if($thirdTagLatestPost)
                                     <li>
                                         <figure class="bsbig_fig wow fadeInDown">
-                                            <a href="" class="featured_img">
+                                            <a href="{{ route('posts.show', ['post' => $thirdTagLatestPost->id]) }}" class="featured_img">
                                                 <img alt="{{ $thirdTagLatestPost->title }}"
                                                      src="{{ secure_asset('storage/' . $thirdTagLatestPost->image_path) }}">
                                                 <span class="overlay"></span>
