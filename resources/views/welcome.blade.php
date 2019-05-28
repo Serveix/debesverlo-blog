@@ -8,7 +8,7 @@
                     @foreach($sliderPosts as $sp)
                     <div class="single_iteam">
                         <a href="{{ route('posts.show', ['post' => $sp->id]) }}">
-                            <img src="{{ asset('storage/'.$sp->image_path) }}" alt="">
+                            <img src="{{ secure_asset('storage/'.$sp->image_path) }}" alt="{{ $sp->title }}">
                         </a>
                         <div class="slider_article">
                             <h2>
@@ -45,7 +45,7 @@
 
                                     <figure class="bsbig_fig">
                                         <a href="pages/single_page.html" class="featured_img">
-                                            <img alt="" src="{{ asset('storage/'.$latestPost->image_path) }}">
+                                            <img alt="" src="{{ secure_asset('storage/'.$latestPost->image_path) }}">
                                             <span class="overlay"></span>
                                         </a>
                                         <figcaption>
@@ -68,7 +68,7 @@
                                 <li>
                                     <div class="media wow fadeInDown">
                                         <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="media-left">
-                                            <img alt="" src="{{ asset('storage/' . $post->image_path) }}">
+                                            <img alt="" src="{{ secure_asset('storage/' . $post->image_path) }}">
                                         </a>
                                         <div class="media-body">
                                             <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="catg_title">

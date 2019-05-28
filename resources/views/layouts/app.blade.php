@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>DebesVerlo: @yield('title')</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/li-scroller.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.fancybox.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/theme.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="¡Tienes que saberlo!">
+    <meta name="keywords" content="blogs, tecnologia, noticias, comida, deportes, peliculas">
+
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/font.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/li-scroller.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/jquery.fancybox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/theme.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/style.css') }}">
+
     @yield('styles')
     <!--[if lt IE 9]>
     <script src="{{ asset('assets/js/html5shiv.min.js') }}"></script>
