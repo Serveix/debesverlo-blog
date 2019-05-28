@@ -44,15 +44,22 @@
                     </div>
                 </div>
             </div>
-            <nav class="nav-slit"> <a class="prev" href="#"> <span class="icon-wrap"><i class="fa fa-angle-left"></i></span>
+            <nav class="nav-slit">
+                <a class="prev" href="#">
+                    <span class="icon-wrap">
+                        <i class="fa fa-angle-left"></i>
+                    </span>
                     <div>
-                        <h3>City Lights</h3>
-                        <img src="../../public/images/post_img1.jpg" alt=""/> </div>
-                </a> <a class="next" href="#"> <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
+                        <h3>{{ $previousPost->title }}</h3>
+                        <img src="{{ asset('storage/' . $previousPost->image_path) }}" alt="{{ $previousPost->description }}"/>
+                    </div>
+                </a>
+                <a class="next" href="#"> <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
                     <div>
-                        <h3>Street Hills</h3>
-                        <img src="../../public/images/post_img1.jpg" alt=""/> </div>
-                </a> </nav>
+                        <h3>{{ $nextPost->title }}</h3>
+                        <img src="{{ asset('storage/' . $nextPost->image_path) }}" alt="{{ $nextPost->description }}"/> </div>
+                </a>
+            </nav>
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <aside class="right_content">
                     @include('includes.recent_posts')
