@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('title', $post->title)
+@section('description', $post->description)
+@section('thumbnail')
+    <meta property="og:image" content="{{ secure_asset('storage/' . $post->image_path) }}">
+@endsection
 @section('content')
     <section id="contentSection">
         <div class="row">

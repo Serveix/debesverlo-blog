@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Inicio')
+@section('description', '¡Entérate de lo último en el mundo!')
 @section('content')
     <section id="sliderSection">
         <div class="row">

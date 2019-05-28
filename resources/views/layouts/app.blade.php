@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="¡Tienes que saberlo!">
+    <meta name="description" content="@yield('description')">
     <meta name="keywords" content="blogs, tecnologia, noticias, comida, deportes, peliculas">
+
+    <meta property="og:url" content="{{ env('APP_URL') }}"/>
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="@yield('title')" />
+    <meta property="og:description" content="@yield('description')" />
+    <meta property="og:image:alt" content="@yield('description')" />
+    @yield('thumbnail')
 
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('assets/css/font-awesome.min.css')}}">
