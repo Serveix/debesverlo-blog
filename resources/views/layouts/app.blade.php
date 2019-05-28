@@ -37,6 +37,7 @@
     <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
     <div class="container">
         <header id="header">
+            @auth
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="header_top">
@@ -59,6 +60,7 @@
                         </div>
                     </div>
                 </div>
+                @endauth
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="header_bottom">
                         <div class="logo_area"><a href="/" class="logo"><img src="{{ secure_asset('images/logodebesverlo.png') }}" alt=""></a></div>
