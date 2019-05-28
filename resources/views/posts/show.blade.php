@@ -45,8 +45,8 @@
                 </div>
             </div>
             <nav class="nav-slit">
-                @if($previousPost != null)
-                <a class="prev" href="#">
+                @if($previousPost )
+                <a class="prev" href="{{ route('posts.show', ['post' => $previousPost->id]) }}">
                     <span class="icon-wrap">
                         <i class="fa fa-angle-left"></i>
                     </span>
@@ -56,8 +56,9 @@
                     </div>
                 </a>
                 @endif
-                @if($nextPost != null)
-                <a class="next" href="#"> <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
+                @if($nextPost)
+                <a class="next" href="{{ route('posts.show', ['post' => $nextPost->id]) }}">
+                    <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
                     <div>
                         <h3>{{ $nextPost->title }}</h3>
                         <img src="{{ asset('storage/' . $nextPost->image_path) }}" alt="{{ $nextPost->description }}"/> </div>
