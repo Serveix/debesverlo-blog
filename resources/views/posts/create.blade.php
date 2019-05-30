@@ -113,7 +113,30 @@
 @section('scripts')
 
     <script>
+
+        let toolbarOptions = [
+            ['bold', 'italic', 'underline', 'strike'],
+            ['blockquote', 'code-block'],
+            [{'header': 1}, { 'header': 2}]
+            [{'list': 'ordered'}, {'list': 'bullet'}],
+            [{'script': 'sub'}, {'script': 'super'}],
+            [{'indent': '-1'}, {'indent': '+1'}],
+            [{'direction': 'rt1'}],
+
+            [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+            [ 'link', 'image', 'video', 'formula' ],          // add's image support
+            [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+            [{ 'font': [] }],
+            [{ 'align': [] }],
+
+            ['clean']
+        ]
+
         let quill = new Quill('#editor', {
+            modules: {
+                toolbar: toolbarOptions
+            },
             theme: 'snow'
         })
 

@@ -9,7 +9,7 @@
                     @foreach($sliderPosts as $sp)
                     <div class="single_iteam">
                         <a href="{{ route('posts.show', ['post' => $sp->id]) }}">
-                            <img src="{{ secure_asset('storage/'.$sp->image_path) }}" alt="{{ $sp->title }}">
+                            <img src="{{ asset('storage/'.$sp->image_path, !env('APP_DEBUG')) }}" alt="{{ $sp->title }}">
                         </a>
                         <div class="slider_article">
                             <h2>
@@ -46,7 +46,7 @@
 
                                     <figure class="bsbig_fig">
                                         <a href="{{ route('posts.show', ['posts'=> $latestPost->id]) }}" class="featured_img">
-                                            <img alt="" src="{{ secure_asset('storage/'.$latestPost->image_path) }}">
+                                            <img alt="" src="{{ asset('storage/'.$latestPost->image_path, !env('APP_DEBUG')) }}">
                                             <span class="overlay"></span>
                                         </a>
                                         <figcaption>
@@ -69,7 +69,7 @@
                                 <li>
                                     <div class="media wow fadeInDown">
                                         <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="media-left">
-                                            <img alt="" src="{{ secure_asset('storage/' . $post->image_path) }}">
+                                            <img alt="" src="{{ asset('storage/' . $post->image_path, !env('APP_DEBUG')) }}">
                                         </a>
                                         <div class="media-body">
                                             <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="catg_title">
@@ -94,7 +94,7 @@
                                         <figure class="bsbig_fig">
                                             <a href="{{ route('posts.show', ['post' => $secTagLatestPost]) }}" class="featured_img">
                                                 <img alt="{{ $secTagLatestPost->title }}"
-                                                     src="{{ secure_asset('storage/' . $secTagLatestPost->image_path) }}">
+                                                     src="{{ asset('storage/' . $secTagLatestPost->image_path, !env('APP_DEBUG')) }}">
                                                 <span class="overlay"></span>
                                             </a>
                                             <figcaption>
@@ -115,7 +115,7 @@
                                             <div class="media wow fadeInDown">
                                                 <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="media-left">
                                                     <img alt="{{ $post->title }}"
-                                                         src="{{ secure_asset('storage/' . $post->image_path ) }}">
+                                                         src="{{ asset('storage/' . $post->image_path, !env('APP_DEBUG')) }}">
                                                 </a>
                                                 <div class="media-body">
                                                     <a href="{{ route('posts.show', ['posts' => $post->id]) }}" class="catg_title">
@@ -139,7 +139,7 @@
                                         <figure class="bsbig_fig wow fadeInDown">
                                             <a href="{{ route('posts.show', ['post' => $thirdTagLatestPost->id]) }}" class="featured_img">
                                                 <img alt="{{ $thirdTagLatestPost->title }}"
-                                                     src="{{ secure_asset('storage/' . $thirdTagLatestPost->image_path) }}">
+                                                     src="{{ asset('storage/' . $thirdTagLatestPost->image_path) }}">
                                                 <span class="overlay"></span>
                                             </a>
                                             <figcaption>
@@ -159,7 +159,7 @@
                                     <li>
                                         <div class="media wow fadeInDown">
                                             <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="media-left">
-                                                <img alt="{{ $post->title }}" src="{{ secure_asset('storage/' . $post->image_path) }}">
+                                                <img alt="{{ $post->title }}" src="{{ asset('storage/' . $post->image_path, !env('APP_DEBUG')) }}">
                                             </a>
                                             <div class="media-body">
                                                 <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="catg_title">
