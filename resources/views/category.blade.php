@@ -8,7 +8,7 @@
                 <div class="single_post_content">
                     <h2><span>{{ $category->name }}</span></h2>
 
-                    @php $latestPost = $category->posts->latest()->first(); @endphp
+                    @php $latestPost = $category->posts()->latest()->first(); @endphp
                     @if($latestPost)
                     <div class="single_post_content_left">
                         <ul class="business_catgnav">
