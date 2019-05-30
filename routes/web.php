@@ -24,7 +24,7 @@ Route::get('categories/{category}', 'CategoryController@show')->name('categories
 Route::get('post', 'PostController@create')->name('posts.create');
 Route::post('post', 'PostController@store')->name('posts.store');
 
-Route::get('posts', function() { redirect('/'); });
+Route::get('posts', 'PostController@index')->name('posts.index')->middleware('auth');
 Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
 
 
