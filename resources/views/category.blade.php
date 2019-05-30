@@ -4,27 +4,28 @@
 @section('content')
     <section id="contentSection">
         <div class="row">
-            <div class="col-md-8 col-sm-8 col-lg-8">
+            <div class="col-md-12 col-sm-12 col-lg-12">
                 <div class="single_post_content">
                     <h2><span>{{ $category->name }}</span></h2>
-                    @php $firstPost = $category->posts->first(); @endphp
-                    @if($firstPost)
+
+                    @php $latestPost = $category->posts->latest()->first(); @endphp
+                    @if($latestPost)
                     <div class="single_post_content_left">
                         <ul class="business_catgnav">
                             <li>
                                 <figure class="bsbig_fig  wow fadeInDown">
-                                    <a class="featured_img" href="{{ route('posts.show', ['post' => $firstPost->id]) }}">
-                                        <img src="{{ secure_asset('storage/' . $firstPost->image_path) }}"
-                                             alt="{{ $firstPost->title }}">
+                                    <a class="featured_img" href="{{ route('posts.show', ['post' => $latestPost->id]) }}">
+                                        <img src="{{ secure_asset('storage/' . $latestPost->image_path) }}"
+                                             alt="{{ $latestPost->title }}">
                                         <span class="overlay"></span>
                                     </a>
                                     <figcaption>
-                                        <a href="{{ route('posts.show', ['post' => $firstPost->id]) }}">
-                                            {{ $firstPost->title }}
+                                        <a href="{{ route('posts.show', ['post' => $latestPost->id]) }}">
+                                            {{ $latestPost->title }}
                                         </a>
                                     </figcaption>
                                     <p>
-                                        {{ $firstPost->description }}
+                                        {{ $latestPost->description }}
                                     </p>
                                 </figure>
                             </li>
@@ -33,26 +34,20 @@
                     @endif
                     <div class="single_post_content_right">
                         <ul class="spost_nav">
+                            @foreach($category->posts()->offset(1)->limit(5)->latest()->get() as $post)
                             <li>
-                                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="../public/images/post_img1.jpg"> </a>
-                                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                                <div class="media wow fadeInDown">
+                                    <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="media-left">
+                                        <img alt="{{ $post->title }}" src="{{ secure_asset('storage/' . $post->image_path) }}">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="{{ route('posts.show', ['post' => $post->id]) }}" class="catg_title">
+                                            {{ $post->title }}
+                                        </a>
+                                    </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="../public/images/post_img2.jpg"> </a>
-                                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="../public/images/post_img1.jpg"> </a>
-                                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="../public/images/post_img2.jpg"> </a>
-                                    <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
-                                </div>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
