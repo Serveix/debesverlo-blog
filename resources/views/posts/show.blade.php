@@ -11,15 +11,22 @@
                 <div class="left_content">
                     <div class="single_page">
                         <ol class="breadcrumb">
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="#">{{ $post->tags->first()->name }}</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li>
+                                <a href="{{ route('categories.show', ['category' => $post->tags->first()->id]) }}">
+                                    {{ $post->tags->first()->name }}
+                                </a>
+                            </li>
                             {{--<li class="active">Mobile</li>--}}
                         </ol>
                         <h1>{{ $post->title }}</h1>
                         <div class="post_commentbox">
                             <a href="#"><i class="fa fa-user"></i>{{ $post->user->name }}</a>
                             <span><i class="fa fa-calendar"></i>{{ $post->created_at }}</span>
-                            <a href="#"><i class="fa fa-tags"></i>{{ $post->tags->first()->name }}</a> </div>
+                            <a href="{{ route('categories.show', ['category' => $post->tags->first()->id]) }}">
+                                <i class="fa fa-tags"></i>{{ $post->tags->first()->name }}
+                            </a>
+                        </div>
                         <div class="single_page_content">
                             <img class="img-center" src="{{ asset( 'storage/' . $post->image_path ) }}" alt="{{ $post->title }}">
                             <div id="content"></div>

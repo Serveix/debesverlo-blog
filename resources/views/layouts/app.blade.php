@@ -81,17 +81,17 @@
                     <div class="header_bottom">
                         <div class="logo_area"><a href="/" class="logo"><img src="{{ secure_asset('images/logodebesverlo.png') }}" alt=""></a></div>
                         <div class="add_banner">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- top bar -->
-                        <ins class="adsbygoogle"
-                            style="display:block"
-                            data-ad-client="ca-pub-1381053474060693"
-                            data-ad-slot="4882257137"
-                            data-ad-format="auto"
-                            data-full-width-responsive="true"></ins>
-                        <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                            {{--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>--}}
+                            {{--<!-- top bar -->--}}
+                            {{--<ins class="adsbygoogle"--}}
+                                {{--style="display:block"--}}
+                                {{--data-ad-client="ca-pub-1381053474060693"--}}
+                                {{--data-ad-slot="4882257137"--}}
+                                {{--data-ad-format="auto"--}}
+                                {{--data-full-width-responsive="true"></ins>--}}
+                            {{--<script>--}}
+                            {{--(adsbygoogle = window.adsbygoogle || []).push({});--}}
+                            {{--</script>--}}
                         </div>
                     </div>
                 </div>

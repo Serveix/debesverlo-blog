@@ -6,7 +6,7 @@
         <ul class="nav navbar-nav main_nav">
             <li class="active"><a href="/"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
             @foreach(App\Tag::all() as $tag)
-                <li><a href="#">{{ $tag->name }}</a></li>
+                <li><a href="{{ route('categories.show', ['category' => $tag->id]) }}">{{ $tag->name }}</a></li>
             @endforeach
         </ul>
     </div>
