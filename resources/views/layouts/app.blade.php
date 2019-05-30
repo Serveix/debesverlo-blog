@@ -111,9 +111,9 @@
         <div class="footer_top"></div>
         <div class="footer_bottom">
             <p class="copyright">Debes<b>Verlo</b>.com</p>
-            <p class="developer">
-                <a href="/login">Login</a>
-            </p>
+            {{--<p class="developer">--}}
+                {{--<a href="/login">Login</a>--}}
+            {{--</p>--}}
         </div>
     </footer>
     </div>
