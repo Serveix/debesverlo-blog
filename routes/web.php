@@ -17,12 +17,14 @@ Route::get('tags', 'TagController@index')->name('tags.index');
 Route::get('tag', 'TagController@create')->name('tags.create');
 Route::post('tag', 'TagController@store')->name('tags.store');
 Route::post('tag/{tag}', 'TagController@destroy')->name('tags.destroy');
+//todo: update tag to category naming, controller methods and route names
+Route::get('categories/{category}', 'CategoryController@show')->name('categories.show');
 
 Route::get('post', 'PostController@create')->name('posts.create');
 Route::post('post', 'PostController@store')->name('posts.store');
 Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
 
-Route::get('categories/{category}', 'CategoryController@show');
+
 
 Auth::routes();
 
