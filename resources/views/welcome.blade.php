@@ -139,7 +139,7 @@
                                         <figure class="bsbig_fig wow fadeInDown">
                                             <a href="{{ route('posts.show', ['post' => $thirdTagLatestPost->id]) }}" class="featured_img">
                                                 <img alt="{{ $thirdTagLatestPost->title }}"
-                                                     src="{{ asset('storage/' . $thirdTagLatestPost->image_path) }}">
+                                                     src="{{ asset('storage/' . $thirdTagLatestPost->image_path, !env('APP_DEBUG')) }}">
                                                 <span class="overlay"></span>
                                             </a>
                                             <figcaption>

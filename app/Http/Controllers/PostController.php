@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('');
+        return view('posts.index')->with('posts', Post::all());
     }
 
     /**
@@ -89,7 +89,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit');
     }
 
     /**
@@ -112,6 +112,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return back()->with('success-deleted', 'Post eliminado con éxito');
     }
 }
