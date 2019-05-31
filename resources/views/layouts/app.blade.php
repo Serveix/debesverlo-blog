@@ -95,7 +95,7 @@
                 @endauth
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="header_bottom">
-                        <div class="logo_area"><a href="/" class="logo"><img src="{{ asset('images/logodebesverlo.png') }}" alt=""></a></div>
+                        <div class="logo_area"><a href="/" class="logo"><img src="{{ asset('images/logodebesverlo.png', !env('APP_DEBUG')) }}" alt=""></a></div>
                         {{--<div class="add_banner">--}}
                             {{--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>--}}
                             {{--<!-- top bar -->--}}
