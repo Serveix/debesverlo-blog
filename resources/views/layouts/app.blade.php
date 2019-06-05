@@ -23,8 +23,7 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css', !env('APP_DEBUG')) }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css', !env('APP_DEBUG'))}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.css', !env('APP_DEBUG')) }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font.css', !env('APP_DEBUG')) }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/li-scroller.css', !env('APP_DEBUG')) }}">
@@ -35,12 +34,14 @@
 
     @yield('styles')
 
+    <script src="https://kit.fontawesome.com/4a26d18909.js"></script>
+
     <!--[if lt IE 9]>
     <script src="{{ asset('assets/js/html5shiv.min.js', !env('APP_DEBUG')) }}"></script>
     <script src="{{ asset('assets/js/respond.min.js', !env('APP_DEBUG')) }}"></script>
     <![endif]-->
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
          (adsbygoogle = window.adsbygoogle || []).push({
               google_ad_client: "ca-pub-1381053474060693",
@@ -135,7 +136,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ asset('assets/js/wow.min.js', !env('APP_DEBUG')) }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js', !env('APP_DEBUG')) }}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/slick.min.js', !env('APP_DEBUG')) }}"></script>
     <script src="{{ asset('assets/js/jquery.li-scroller.1.0.js', !env('APP_DEBUG')) }}"></script>
     <script src="{{ asset('assets/js/jquery.newsTicker.min.js', !env('APP_DEBUG')) }}"></script>
